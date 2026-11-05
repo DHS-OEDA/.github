@@ -1,0 +1,11 @@
+# Forces people to pick a template. Set to true to allow blank issues.
+blank_issues_enabled: false
+
+# Optional links shown in the template chooser. Uncomment and edit as needed.
+# contact_links:
+#   - name: 📘 Git for Researchers lab manual
+#     url: https://example.org/git-workshop-manual
+#     about: Workflow guides and how-tos for our team.
+#   - name: 💬 Ask a question
+#     url: https://github.com/orgs/DHS-OEDA/discussions
+#     about: Questions that aren't bugs or requests.

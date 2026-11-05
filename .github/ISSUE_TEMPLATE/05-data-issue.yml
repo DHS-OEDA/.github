@@ -1,0 +1,91 @@
+name: 🧮 Data issue
+description: A problem with source data, like missing records, duplicates, schema changes, late refreshes, or linkage errors.
+title: "[Data]: "
+type: Bug
+labels: ["data", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when the **data** looks wrong, not the code.
+        ⚠️ **Do not paste row-level records, client IDs, or anything identifying.** Describe the issue with counts, column names, date ranges, and the query you ran.
+
+  - type: input
+    id: source
+    attributes:
+      label: Data source
+      description: Database, schema, table, or file.
+      placeholder: "ANALYTICS_DB.TANF.CASE_MONTHS"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem?
+      multiple: true
+      options:
+        - Missing records or columns
+        - Unexpected duplicates
+        - Values look wrong / out of range
+        - Schema or column change
+        - Data is late / not refreshed
+        - Record linkage or matching problem
+        - Documentation / definitions unclear
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What did you observe?
+      description: Use aggregate numbers. Example, "Row count for 2026-09 dropped from ~48k to ~12k."
+    validations:
+      required: true
+
+  - type: textarea
+    id: query
+    attributes:
+      label: Query or code that shows it
+      description: Formatted as SQL automatically. Use aggregate queries, not SELECT *.
+      render: sql
+    validations:
+      required: false
+
+  - type: input
+    id: first-noticed
+    attributes:
+      label: When did it start / when did you notice?
+      placeholder: "First seen in the 2026-10-01 refresh"
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Downstream impact
+      description: Which reports, dashboards, pipelines, or deliverables are affected?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: owner
+    attributes:
+      label: Who likely needs to fix this?
+      options:
+        - Our team (pipeline / transformation code)
+        - Data Office / platform team
+        - Source system / program area
+        - Not sure
+      default: 3
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: data-safety
+    attributes:
+      label: Data safety check
+      options:
+        - label: This issue contains no row-level records, identifiers, PII/PHI, or credentials.
+          required: true

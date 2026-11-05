@@ -1,0 +1,9 @@
+name	color	description
+triage	FBCA04	Needs review and prioritization
+epic	5319E7	Parent issue grouping related work
+data	0E8A16	Problem with source data, not code
+blocked	B60205	Waiting on something outside this issue
+good first issue	7057FF	Good starting point for someone new to the repo
+priority: high	D93F0B	Needed for a near-term deliverable
+priority: medium	FBCA04	Meaningfully helpful, not urgent
+priority: low	C2E0C6	Nice to have

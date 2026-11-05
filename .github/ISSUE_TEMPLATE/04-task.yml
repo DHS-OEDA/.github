@@ -1,0 +1,67 @@
+name: ✅ Task
+description: A concrete piece of work, like maintenance, refactoring, docs, analysis, or setup.
+title: "[Task]: "
+type: Task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for work that isn't a bug or a new feature. Aim for something one person can finish in a few days or less.
+        **Never paste confidential data** (client records, PII/PHI, credentials).
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Analysis / research
+        - Documentation
+        - Refactor / cleanup
+        - Dependency or package update
+        - Infrastructure / environment setup
+        - Testing
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be done?
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: A checklist. If you can't write one, the task may need to be split.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: input
+    id: epic
+    attributes:
+      label: Related epic
+      placeholder: "#42"
+    validations:
+      required: false
+
+  - type: input
+    id: deadline
+    attributes:
+      label: Due date (if any)
+      placeholder: "2026-12-01"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: data-safety
+    attributes:
+      label: Data safety check
+      options:
+        - label: This issue contains no confidential data, PII/PHI, or credentials.
+          required: true

@@ -1,0 +1,84 @@
+name: 🗺️ Epic
+description: A larger body of work broken into several issues (sub-issues).
+title: "[Epic]: "
+# Uncomment once an "Epic" issue type exists in org settings (Settings > Planning > Issue types):
+# type: Epic
+labels: ["epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An epic is a container. Keep this short; the detail lives in the sub-issues.
+        After creating the epic, use **Create sub-issue** (or **Add existing issue**) at the bottom of the issue to attach the work.
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One or two sentences. What outcome does this epic deliver, and for whom?
+      placeholder: "Migrate the TANF matching pipeline from EC2 to Posit Workbench so it runs on governed infrastructure."
+    validations:
+      required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: Success criteria
+      description: How will we know the epic is complete?
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: in-scope
+    attributes:
+      label: In scope
+    validations:
+      required: false
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: Naming what you are *not* doing prevents scope creep.
+    validations:
+      required: false
+
+  - type: textarea
+    id: breakdown
+    attributes:
+      label: Initial breakdown
+      description: A rough list of the pieces. Turn each into a sub-issue once the epic exists.
+      placeholder: |
+        - Inventory current scripts and dependencies
+        - Set up renv lockfile
+        - Port scheduled job to Connect
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and risks
+      description: Other teams, access requests, data deliveries, or decisions this depends on.
+      placeholder: "Needs Snowflake role grant from the Data Office."
+    validations:
+      required: false
+
+  - type: input
+    id: target
+    attributes:
+      label: Target date
+      placeholder: "2027-03-31"
+    validations:
+      required: false
+
+  - type: input
+    id: stakeholders
+    attributes:
+      label: Owner and stakeholders
+      placeholder: "@owner; requested by program X"
+    validations:
+      required: false
